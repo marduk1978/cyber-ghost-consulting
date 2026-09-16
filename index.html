@@ -5,6 +5,20 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Cyber Ghost Consulting | Network & Cybersecurity Services</title>
   <meta name="description" content="Cyber Ghost Consulting provides small business network setup, cybersecurity hardening, firewall configuration, Wi-Fi, VLANs, backups, and cyber insurance readiness support." />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://cyberghostconsulting.com/" />
+  <meta property="og:title" content="Cyber Ghost Consulting | Small Business Network &amp; Cybersecurity" />
+  <meta property="og:description" content="Firewall hardening, business Wi-Fi and VLANs, backup planning, and cyber insurance readiness for small businesses. Clear, documented, usable security." />
+  <meta property="og:image" content="https://cyberghostconsulting.com/share.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="theme-color" content="#070707" />
+
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%23070707'/%3E%3Cpath d='M16 5l8 3v7c0 5-3.4 9.3-8 11-4.6-1.7-8-6-8-11V8l8-3z' fill='none' stroke='%23ff7a00' stroke-width='2.2' stroke-linejoin='round'/%3E%3Cpath d='M12 16l3 3 5-5.5' fill='none' stroke='%23ff7a00' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@500&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" />
   <style>
     :root {
       --bg: #070707;
@@ -25,15 +39,29 @@
     }
 
     body {
-      font-family: Arial, Helvetica, sans-serif;
+      font-family: "IBM Plex Sans", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
       background: radial-gradient(circle at top right, rgba(255, 122, 0, 0.16), transparent 32%), var(--bg);
       color: var(--text);
       line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
     }
 
     a {
       color: inherit;
       text-decoration: none;
+    }
+
+    :focus-visible {
+      outline: 2px solid var(--orange-light);
+      outline-offset: 3px;
+      border-radius: 6px;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      * {
+        transition: none !important;
+        animation: none !important;
+      }
     }
 
     .container {
@@ -75,7 +103,12 @@
       place-items: center;
       color: var(--orange);
       box-shadow: 0 0 30px rgba(255, 122, 0, 0.28);
-      font-size: 22px;
+      flex: 0 0 auto;
+    }
+
+    .logo-mark svg {
+      width: 22px;
+      height: 22px;
     }
 
     .nav-links {
@@ -137,15 +170,19 @@
       background: rgba(255, 122, 0, 0.12);
       border: 1px solid var(--line);
       color: var(--orange-light);
-      font-weight: 700;
-      font-size: 0.88rem;
+      font-family: "IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+      font-weight: 500;
+      font-size: 0.78rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
       margin-bottom: 22px;
     }
 
     h1 {
-      font-size: clamp(2.6rem, 6vw, 5.2rem);
-      line-height: 0.96;
-      letter-spacing: -2px;
+      font-size: clamp(2.5rem, 5.2vw, 4.4rem);
+      line-height: 1.02;
+      letter-spacing: -0.03em;
+      text-wrap: balance;
       margin-bottom: 24px;
     }
 
@@ -198,37 +235,98 @@
       pointer-events: none;
     }
 
-    .ghost-icon {
-      width: 112px;
-      height: 112px;
-      border-radius: 32px;
+    .who {
+      position: relative;
+      display: grid;
+      gap: 20px;
+    }
+
+    .who-head {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .initials {
+      width: 64px;
+      height: 64px;
+      flex: 0 0 auto;
+      border-radius: 20px;
       background: #050505;
       border: 1px solid var(--line);
       display: grid;
       place-items: center;
-      font-size: 62px;
-      margin-bottom: 28px;
-      box-shadow: inset 0 0 30px rgba(255, 122, 0, 0.08);
+      font-weight: 700;
+      font-size: 1.35rem;
+      letter-spacing: 0.02em;
+      color: var(--orange);
+      box-shadow: inset 0 0 30px rgba(255, 122, 0, 0.1);
     }
 
-    .card-list {
-      display: grid;
-      gap: 14px;
-      position: relative;
+    .who-name {
+      font-size: 1.22rem;
+      font-weight: 700;
+      line-height: 1.25;
     }
 
-    .card-list div {
-      background: rgba(255, 255, 255, 0.045);
-      border: 1px solid rgba(255, 255, 255, 0.08);
-      border-radius: 18px;
-      padding: 15px;
+    .who-role {
+      color: var(--orange-light);
+      font-family: "IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+      font-size: 0.76rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+
+    .who-bio {
       color: var(--muted);
+      font-size: 0.99rem;
     }
 
-    .card-list strong {
+    .stat-row {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      padding: 18px 0;
+    }
+
+    .stat b {
       display: block;
-      color: var(--text);
-      margin-bottom: 3px;
+      font-size: 1.5rem;
+      line-height: 1.1;
+      font-weight: 700;
+      font-variant-numeric: tabular-nums;
+    }
+
+    .stat span {
+      color: var(--muted);
+      font-size: 0.82rem;
+      line-height: 1.35;
+      display: block;
+      margin-top: 4px;
+    }
+
+    .who-list {
+      display: grid;
+      gap: 10px;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    .who-list li {
+      list-style: none;
+      display: flex;
+      gap: 10px;
+      align-items: flex-start;
+    }
+
+    .who-list svg {
+      width: 17px;
+      height: 17px;
+      flex: 0 0 auto;
+      margin-top: 3px;
+      color: var(--orange);
     }
 
     section {
@@ -263,7 +361,6 @@
       border: 1px solid rgba(255, 255, 255, 0.08);
       border-radius: 24px;
       padding: 24px;
-      min-height: 230px;
       transition: transform 0.2s ease, border-color 0.2s ease;
     }
 
@@ -281,12 +378,17 @@
       background: rgba(255, 122, 0, 0.12);
       color: var(--orange-light);
       margin-bottom: 18px;
-      font-size: 24px;
+    }
+
+    .service .icon svg {
+      width: 24px;
+      height: 24px;
     }
 
     .service h3 {
       font-size: 1.18rem;
       margin-bottom: 10px;
+      letter-spacing: -0.01em;
     }
 
     .service p {
@@ -410,8 +512,24 @@
         grid-template-columns: 1fr 1fr;
       }
 
-      .nav-links {
+      .nav-links a:not(.btn) {
         display: none;
+      }
+
+      .stat-row {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 14px;
+      }
+
+      .brand {
+        font-size: 0.95rem;
+        letter-spacing: 0;
+      }
+
+      .logo-mark {
+        width: 38px;
+        height: 38px;
+        border-radius: 12px;
       }
     }
 
@@ -439,14 +557,19 @@
   <header>
     <div class="container nav">
       <a href="#top" class="brand" aria-label="Cyber Ghost Consulting Home">
-        <span class="logo-mark">☠</span>
+        <span class="logo-mark" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 2l8 3v6c0 5-3.4 9.3-8 11-4.6-1.7-8-6-8-11V5l8-3z" />
+            <path d="M9 12l2 2 4-4.5" />
+          </svg>
+        </span>
         <span>Cyber Ghost Consulting</span>
       </a>
       <nav class="nav-links" aria-label="Main navigation">
         <a href="#services">Services</a>
         <a href="#about">About</a>
         <a href="#contact">Contact</a>
-        <a class="btn" href="tel:13233946071">Call Now</a>
+        <a class="btn" href="tel:16615184470">Call Now</a>
       </nav>
     </div>
   </header>
@@ -461,21 +584,58 @@
             Cyber Ghost Consulting helps small businesses strengthen their network, firewall, Wi-Fi, backups, endpoint security, and cyber insurance readiness with practical solutions that make sense.
           </p>
           <div class="hero-actions">
-            <a class="btn" href="tel:13233946071">Call 323-394-6071</a>
-            <a class="btn secondary" href="mailto:mcbizness777@gmail.com">Email Us</a>
+            <a class="btn" href="https://api.leadconnectorhq.com/widget/form/w3JjlWyYL4SO6TIYEwnZ">Request a Security Review</a>
+            <a class="btn secondary" href="tel:16615184470">Call 661-518-4470</a>
           </div>
           <div class="quick-contact">
-            <span><strong>Phone:</strong> 323-394-6071</span>
+            <span><strong>Phone:</strong> 661-518-4470</span>
             <span><strong>Email:</strong> mcbizness777@gmail.com</span>
           </div>
         </div>
 
-        <aside class="security-card" aria-label="Cybersecurity service highlights">
-          <div class="ghost-icon">👻</div>
-          <div class="card-list">
-            <div><strong>Firewall Hardening</strong> Reduce unnecessary access and lock down risky traffic.</div>
-            <div><strong>Business Wi-Fi & VLANs</strong> Separate staff, guest, cameras, VoIP, and IoT devices.</div>
-            <div><strong>Cyber Insurance Readiness</strong> Prepare for common security questionnaire requirements.</div>
+        <aside class="security-card" aria-label="About Cyber Ghost Consulting">
+          <div class="who">
+            <div class="who-head">
+              <div class="initials" aria-hidden="true">CG</div>
+              <div>
+                <div class="who-name">Charles McCollum</div>
+                <div class="who-role">Principal · Cyber Ghost Consulting</div>
+              </div>
+            </div>
+
+            <p class="who-bio">
+              Career IT and security work across Windows Server, Linux, networking, and firewalls — the same hands doing the assessment are the ones configuring the equipment.
+            </p>
+
+            <div class="stat-row">
+              <div class="stat">
+                <b>20+</b>
+                <span>Years in IT services</span>
+              </div>
+              <div class="stat">
+                <b>130+</b>
+                <span>Users supported daily</span>
+              </div>
+              <div class="stat">
+                <b>2</b>
+                <span>Offices kept running</span>
+              </div>
+            </div>
+
+            <ul class="who-list">
+              <li>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5" /></svg>
+                <span>Hardware security key rollouts and multi-factor deployments for small insurance agencies</span>
+              </li>
+              <li>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5" /></svg>
+                <span>Network segmentation that separates staff, guest, camera, VoIP, and IoT traffic</span>
+              </li>
+              <li>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5" /></svg>
+                <span>Documentation written so your next technician can pick it up without calling me</span>
+              </li>
+            </ul>
           </div>
         </aside>
       </div>
@@ -490,40 +650,57 @@
 
         <div class="services-grid">
           <article class="service">
-            <div class="icon">🛡️</div>
+            <div class="icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l8 3v6c0 5-3.4 9.3-8 11-4.6-1.7-8-6-8-11V5l8-3z"/><path d="M9 12l2 2 4-4.5"/></svg>
+            </div>
             <h3>Cybersecurity Assessment</h3>
             <p>Review your current risks, security gaps, user access, backups, remote access, endpoint protection, and insurance readiness.</p>
           </article>
 
           <article class="service">
-            <div class="icon">🔥</div>
+            <div class="icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4.5" width="18" height="15" rx="2"/><path d="M3 9.5h18M3 14.5h18M8 4.5v5M16 9.5v5M8 14.5v5"/></svg>
+            </div>
             <h3>Firewall Configuration</h3>
             <p>Configure firewall rules, VLAN isolation, secure DNS, threat prevention, and safer access between business systems.</p>
           </article>
 
           <article class="service">
-            <div class="icon">📶</div>
+            <div class="icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2.5 9a15 15 0 0 1 19 0"/><path d="M6 12.5a10 10 0 0 1 12 0"/><path d="M9.5 16a5 5 0 0 1 5 0"/><circle cx="12" cy="19.5" r="0.6" fill="currentColor"/></svg>
+            </div>
             <h3>Wi-Fi & Network Setup</h3>
             <p>Design and deploy reliable business Wi-Fi, switches, access points, guest networks, VoIP networks, and camera networks.</p>
           </article>
 
           <article class="service">
-            <div class="icon">💾</div>
+            <div class="icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="6" rx="8" ry="3"/><path d="M4 6v6c0 1.7 3.6 3 8 3s8-1.3 8-3V6"/><path d="M4 12v6c0 1.7 3.6 3 8 3s8-1.3 8-3v-6"/></svg>
+            </div>
             <h3>Backup Planning</h3>
             <p>Help create a better backup layout for servers, workstations, NAS storage, cloud backups, and recovery planning.</p>
           </article>
 
           <article class="service">
-            <div class="icon">📋</div>
+            <div class="icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8l-5-5z"/><path d="M14 3v5h5"/><path d="M9 13h6M9 17h4"/></svg>
+            </div>
             <h3>Documentation</h3>
             <p>Receive clear network diagrams, device lists, firewall notes, login handoff checklists, and client-facing reports.</p>
           </article>
 
           <article class="service">
-            <div class="icon">🧰</div>
+            <div class="icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M15.5 3.5a5.5 5.5 0 0 0-7 7L3.8 15.2a2.5 2.5 0 1 0 3.5 3.5l4.7-4.7a5.5 5.5 0 0 0 7-7l-3 3-2.5-.5-.5-2.5 3-3z"/></svg>
+            </div>
             <h3>IT Support Projects</h3>
             <p>Get help with Microsoft 365, device setup, security tools, cameras, VoIP systems, troubleshooting, and office technology upgrades.</p>
           </article>
+        </div>
+
+        <div class="hero-actions" style="justify-content: center; margin-top: 36px;">
+          <a class="btn" href="https://api.leadconnectorhq.com/widget/form/w3JjlWyYL4SO6TIYEwnZ">Request a Security Review</a>
+          <a class="btn secondary" href="https://api.leadconnectorhq.com/widget/bookings/cyber-ghost-intro">Book a 20-Minute Call</a>
         </div>
       </div>
     </section>
@@ -553,9 +730,9 @@
       <div class="container cta-box">
         <div>
           <h2>Need your business network cleaned up or secured?</h2>
-          <p>Schedule a consultation and get a clear plan for improving your security, Wi-Fi, firewall, backups, and cyber insurance readiness.</p>
+          <p>Book a 20-minute call and get a clear plan for improving your security, Wi-Fi, firewall, backups, and cyber insurance readiness. No prep needed — bring what you know.</p>
         </div>
-        <a class="btn" href="tel:13233946071">Start With a Call</a>
+        <a class="btn" href="https://api.leadconnectorhq.com/widget/bookings/cyber-ghost-intro">Book a 20-Minute Call</a>
       </div>
     </section>
 
@@ -567,8 +744,16 @@
         </div>
         <div class="contact-grid">
           <div class="contact-card">
+            <span>Book a call</span>
+            <a href="https://api.leadconnectorhq.com/widget/bookings/cyber-ghost-intro">Pick a 20-minute slot</a>
+          </div>
+          <div class="contact-card">
+            <span>Request a review</span>
+            <a href="https://api.leadconnectorhq.com/widget/form/w3JjlWyYL4SO6TIYEwnZ">Tell us about your setup</a>
+          </div>
+          <div class="contact-card">
             <span>Call</span>
-            <a href="tel:13233946071">323-394-6071</a>
+            <a href="tel:16615184470">661-518-4470</a>
           </div>
           <div class="contact-card">
             <span>Email</span>
